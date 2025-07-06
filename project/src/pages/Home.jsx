@@ -9,6 +9,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import bgVideo from '../assets/videos/bg-video.mp4';
 import ecellLogo from '../assets/images/ecell-logo.png'; // adjust path if needed
+import SponsorForm from './SponsorForm';
 
 
 const Home = () => {
@@ -656,6 +657,10 @@ const Home = () => {
 
       <div id="teamsection">
         <TeamSection />
+      </div>
+
+      <div id="sponsorform">
+        <SponsorForm />
       </div>
 
       <div id="Footer">
