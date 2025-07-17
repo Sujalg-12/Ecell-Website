@@ -5,6 +5,7 @@ import TeamSection from './Teamsection';
 import Footer from './Footer';
 import Stats from './Stats';
 import About from './AboutSection';
+import Gallery from './Gallery';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import bgVideo from '../assets/videos/bg-video.mp4';
@@ -653,6 +654,10 @@ const Home = () => {
 
       <div id="Stats">
         <Stats />
+      </div>
+
+      <div id="gallery">
+        <Gallery />
       </div>
 
       <div id="teamsection">
