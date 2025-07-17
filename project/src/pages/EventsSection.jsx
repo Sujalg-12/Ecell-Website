@@ -18,11 +18,11 @@ function Events() {
       title: "Portfolio Managment",
       date: "July 15, 2024",
       time: "6:00 PM - 11:00 PM",
-      location: "Whi har bar ka H05",
+      location: "H05",
       image: "https://images.pexels.com/photos/7947707/pexels-photo-7947707.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      description: "Manage discover learn and explore with us in this competition of bhag bencho",
+      description: "Manage discover learn and explore with us in this competition.",
       isOnline: false,
-      attendees: 5,
+      attendees: 100,
       category: "Business & Finance",
       organizer: "Admin Sahoo"
     },
@@ -267,7 +267,7 @@ function Events() {
             <div
               key={event.id}
               onClick={() => openModal(event)}
-              className="group relative flex-shrink-0 w-70 h-80 md:w-80 md:h-96 bg-gray-200 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 ease-out hover:scale-110 hover:shadow-3xl hover:rotate-1 select-none cursor-pointer"
+              className="group relative flex-shrink-0 w-70 h-80 md:w-80 md:h-96 bg-gray-200 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 ease-out md:hover:scale-110 md:hover:shadow-3xl md:hover:rotate-1 select-none cursor-pointer"
               style={{
                 backgroundImage: `url(${event.image})`,
                 backgroundSize: 'cover',
@@ -275,11 +275,11 @@ function Events() {
                 scrollSnapAlign: 'start'
               }}
             >
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Overlay - Always visible on mobile, hover on desktop */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
               
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+              {/* Content - Always visible on mobile, hover on desktop */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-500">
                 <div className="flex items-center gap-2 mb-2">
                   {event.isOnline ? (
                     <Globe className="w-4 h-4 text-green-400" />
@@ -290,16 +290,22 @@ function Events() {
                     {event.isOnline ? 'Online Event' : 'In-Person'}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold mb-2">{event.title}</h3>
+                <h3 className="text-lg md:text-xl font-bold mb-2 line-clamp-2">{event.title}</h3>
                 <p className="text-sm opacity-90 mb-1">{event.date}</p>
-                <p className="text-sm opacity-75">{event.isOnline ? 'Virtual Event' : event.location}</p>
-                <div className="mt-3 text-xs bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 inline-block">
-                  Click for details
+                <p className="text-sm opacity-75 mb-2 line-clamp-1">{event.isOnline ? 'Virtual Event' : event.location}</p>
+                <p className="text-xs opacity-80 mb-3 line-clamp-2 md:line-clamp-none">{event.description}</p>
+                <div className="flex items-center justify-between">
+                  <div className="text-xs bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 inline-block">
+                    {event.attendees} attendees
+                  </div>
+                  <div className="text-xs bg-blue-500/20 backdrop-blur-sm rounded-full px-3 py-1 inline-block">
+                    {event.category}
+                  </div>
                 </div>
               </div>
 
-              {/* Hover glow effect */}
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+              {/* Hover glow effect - only on desktop */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                    style={{
                      boxShadow: '0 0 30px rgba(255, 255, 255, 0.3), inset 0 0 30px rgba(255, 255, 255, 0.1)'
                    }} />
