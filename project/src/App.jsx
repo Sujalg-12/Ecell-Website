@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
-import Events from './pages/Events.jsx';
+import Events from './pages/EventsSection.jsx';
 
 function App() {
   return (
