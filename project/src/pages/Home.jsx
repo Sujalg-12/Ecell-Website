@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Events from './Events';
+import Events from './EventsSection';
 import TeamSection from './Teamsection';
 import Footer from './Footer';
 import Stats from './Stats';
